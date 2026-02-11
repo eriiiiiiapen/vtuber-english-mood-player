@@ -1,8 +1,10 @@
 import './App.css'
+import { MoodControls } from './components/MoodControls';
+import { MoodDisplay } from './components/MoodDisplay';
 import { useMoodStore } from './store/moodStore'
 
 function App() {
-  const { mood, setMood } = useMoodStore();
+  const mood = useMoodStore((state) => state.mood);
 
   const backgroundColor = {
     calm: "#f5f5f5",
@@ -27,14 +29,8 @@ function App() {
           transition: "all 0.3s ease",
         }}
       >
-        <h1 style={{ padding: "10px" }}>VTuber Mood Player</h1>
-        <p>CurrentMood: {mood}</p>
-
-        <div>
-          <button onClick={() => setMood('calm')}>Calm</button>
-          <button onClick={() => setMood('excited')}>Excited</button>
-          <button onClick={() => setMood('dark')}>Dark</button>
-        </div>
+        <MoodDisplay />
+        <MoodControls />
       </div>
     </>
   )
