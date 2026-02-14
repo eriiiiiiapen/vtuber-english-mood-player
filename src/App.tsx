@@ -19,7 +19,6 @@ function App() {
     <>
       <div
         style={{
-          height: "100vh",
           backgroundColor,
           color: textColor,
           display: "flex",
