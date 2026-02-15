@@ -5,7 +5,7 @@ export const MoodDisplay = () => {
 
   return (
     <>
-      <h1 style={{ padding: "10px" }}>VTuber Mood Player</h1>
+      <h3>VTuber Mood Player</h3>
       <p>Current Mood: {mood}</p>
     </>
   );
