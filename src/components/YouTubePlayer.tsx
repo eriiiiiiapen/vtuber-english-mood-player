@@ -2,8 +2,7 @@ import YouTube, { type YouTubeProps } from "react-youtube";
 import { useVideoStore } from "../store/videoStore";
 
 export const YoutubePlayer = () => {
-    //TODO:URL
-    const videoId = '';
+    const videoId = useVideoStore((state) => state.videoId);
     const setPlayer = useVideoStore((state) => state.setPlayer);
 
     const onPlayerReady: YouTubeProps['onReady'] = (event) => {
