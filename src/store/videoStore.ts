@@ -9,6 +9,8 @@ interface Moment {
 }
 
 interface VideoStore {
+    videoId: string;
+    setVideoId: (videoId: string) => void;
     player: any | null;
     setPlayer: (player: any) => void;
     moments: Moment[];
@@ -20,6 +22,8 @@ interface VideoStore {
 export const useVideoStore = create<VideoStore>()(
     persist(
         (set, get) => ({
+            videoId: '',
+            setVideoId: (id) => set({ videoId: id }),
             player: null,
             setPlayer: (player) => set({player}),
             moments: [],
@@ -48,7 +52,10 @@ export const useVideoStore = create<VideoStore>()(
         }),
         {
             name: "vtuber-moments-storage",
-            partialize: (state) => ({ moments: state.moments }),
+            partialize: (state) => ({ 
+                moments: state.moments,
+                videoId: state.videoId
+            }),
         }
     )
 );

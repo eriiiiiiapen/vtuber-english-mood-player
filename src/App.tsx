@@ -1,6 +1,7 @@
 import './App.css'
 import { MoodControls } from './components/MoodControls';
 import { MoodDisplay } from './components/MoodDisplay';
+import { VideoInput } from './components/VideoInput';
 import { YoutubePlayer } from './components/YouTubePlayer';
 import { useMoodStore } from './store/moodStore'
 
@@ -29,6 +30,7 @@ function App() {
           transition: "all 0.3s ease",
         }}
       >
+        <VideoInput />
         <YoutubePlayer />
         <MoodDisplay />
         <MoodControls />
