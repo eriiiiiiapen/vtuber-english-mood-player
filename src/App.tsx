@@ -1,9 +1,10 @@
 import './App.css'
+import { LevelSelector } from './components/LevelSelector';
 import { MoodControls } from './components/MoodControls';
 import { MoodDisplay } from './components/MoodDisplay';
 import { VideoInput } from './components/VideoInput';
 import { YoutubePlayer } from './components/YouTubePlayer';
-import { useMoodStore } from './store/moodStore'
+import { useMoodStore } from './store/moodStore';
 
 function App() {
   const mood = useMoodStore((state) => state.mood);
@@ -32,6 +33,7 @@ function App() {
       >
         <VideoInput />
         <YoutubePlayer />
+        <LevelSelector />
         <MoodDisplay />
         <MoodControls />
       </div>

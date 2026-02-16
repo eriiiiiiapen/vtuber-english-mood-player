@@ -17,6 +17,8 @@ interface VideoStore {
     addMoment: (mood: string) => void;
     clearMoments: () => void;
     jumpTo: (seconds: number) => void;
+    currentTime: number;
+    setCurrentTime: (time: number) => void;
 };
 
 export const useVideoStore = create<VideoStore>()(
@@ -48,7 +50,9 @@ export const useVideoStore = create<VideoStore>()(
                     player.seekTo(seconds, true);
                     player.playVideo();
                 }
-            }
+            },
+            currentTime: 0,
+            setCurrentTime: (time) =>  set({ currentTime: time }),
         }),
         {
             name: "vtuber-moments-storage",
