@@ -2,6 +2,7 @@ import './App.css'
 import { LevelSelector } from './components/LevelSelector';
 import { MoodControls } from './components/MoodControls';
 import { MoodDisplay } from './components/MoodDisplay';
+import { TranscriptUploader } from './components/TranscriptUploader';
 import { VideoInput } from './components/VideoInput';
 import { YoutubePlayer } from './components/YouTubePlayer';
 import { useMoodStore } from './store/moodStore';
@@ -32,6 +33,7 @@ function App() {
         }}
       >
         <VideoInput />
+        <TranscriptUploader />
         <YoutubePlayer />
         <LevelSelector />
         <MoodDisplay />
